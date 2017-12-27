@@ -1,0 +1,114 @@
+body {
+	padding: 0;
+	margin: 0;
+	color: #2c3e50;
+}
+
+#background {
+	background: url("../img/bg.svg") no-repeat;
+	background-position: bottom;
+	height: 100vh;
+}
+
+.logo {
+	width: 200px; 
+}
+
+.vertical {
+	margin-top: 25vh;
+	text-align: center;
+}
+
+.middle {
+	margin-top: 25vh;
+}
+
+.massive-text {
+	font-size: 5em;
+}
+
+.light-text {
+	font-weight: 100;
+}
+
+.big {
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.content {
+	height: 100%;
+	vertical-align: middle;
+}
+
+.content h1 {
+	font-size: 2.5rem;
+	line-height: 50px;
+	top: 35%;
+}
+
+.meetup {
+	position: relative;
+}
+
+.date-piece {
+    border-radius: 0.25rem;
+    padding: 1.6rem;
+    font-size: 1.25em;
+    text-align: center;
+    background: white;
+}
+
+.up {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.center {
+    border-radius: 0;
+}
+
+.down {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.day,
+.venue {
+    font-size: 0.65em;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.day {
+	background: #8E001C;
+}
+
+.venue {
+	background: #FFB300;
+}
+
+.month {
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5em;
+    font-weight: 200;
+    background: #8E001C;
+    color: white;
+}
+
+.date {
+    padding-top: 1.5rem;
+    padding-bottom: 1.75rem;
+    font-size: 3rem;
+    font-weight: 100;
+    color: white;
+    background: #FFB300;
+}
+
+.top-mar {
+	margin-top: 50px;
+}
