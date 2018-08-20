@@ -112,3 +112,8 @@ body {
 .top-mar {
 	margin-top: 50px;
 }
+
+.footer {
+    margin: 0!important;
+    border-radius:0!important;
+}
