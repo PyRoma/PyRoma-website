@@ -121,3 +121,7 @@ body {
 .justified {
     text-align: justify;
 }
+
+#tickets {
+    font-size: large; 
+}
