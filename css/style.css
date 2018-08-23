@@ -76,15 +76,15 @@ body {
 
 .day,
 .venue {
-    font-size: 0.65em;
+    font-size: 1em;
     font-weight: 500;
-    letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: white;
+    color: #8E001C;
 }
 
 .day {
 	background: #8E001C;
+	color: white;
 }
 
 .venue {
@@ -116,4 +116,12 @@ body {
 .footer {
     margin: 0!important;
     border-radius:0!important;
+}
+
+.justified {
+    text-align: justify;
+}
+
+#tickets {
+    font-size: large; 
 }
