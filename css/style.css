@@ -125,3 +125,7 @@ body {
 #tickets {
     font-size: large; 
 }
+
+.bottom-padded {
+    padding-bottom: 50px!important;
+}
