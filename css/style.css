@@ -129,3 +129,24 @@ body {
 .bottom-padded {
     padding-bottom: 50px!important;
 }
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+  .logo {
+    width: 110px !important;
+  }
+  .massive-text {
+    font-size: 2em !important;
+  }
+  .light-text {
+    font-size: 1.08em !important;
+  }
+  .ui.grid.container {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 0 !important;
+  }
+  .mobile.only.center.aligned.column {
+    margin: 4px 0 !important;
+    min-height: unset !important;
+  }
+}

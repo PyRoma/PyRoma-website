@@ -72,59 +72,72 @@
             </div>
             <div class="ten wide middle computer tablet only column">
                 <h1 class="massive-text" style="font-weight:900; color:#8E001C; letter-spacing:1px;">PyRoma</h1>
-                <h2 class="light-text" style="font-size:2.2em; color:#FFB300;">La community Python a Roma</h2>
+                <h2 class="light-text" style="font-size:2.2em; color:#FFB300;">
+                    <span style="color:#8E001C;">S</span><span>ono</span>
+                    <span style="color:#8E001C;">P</span><span>ythonisti</span>
+                    <span style="color:#8E001C;">Q</span><span>uesti</span>
+                    <span style="color:#8E001C;">R</span><span>omani</span>
+                </h2>
+                <hr class="light-text">
+                <h3 class="light-text">La community Python a Roma:</h3>
                 <p class="light-text" style="font-size:1.18em; margin-top:20px;">Incontri dal vivo, formazione, networking per chi ama Python. Unisciti a noi!</p>
-                <a href="#socials" class="ui orange huge button" style="margin-top:20px;">Seguici &rarr;</a>
+                <a href="#socials" class="ui orange huge button" style="margin-top:20px;">Partecipa &rarr;</a>
             </div>
-            <div class="sixteen wide mobile only top-mar center aligned column">
+            <div class="sixteen wide mobile only center aligned column" style="margin-top: 24px !important;">
                 <img src="img/logo.svg" alt="Logo" class="logo">
             </div>
-            <div class="sixteen wide mobile only center aligned column">
-                <h1 class="massive-text">PyRoma</h1>
-                <h1 class="light-text">Sono Pythonisti Questi Romani</h1>
+            <div class="sixteen wide mobile only center aligned column" style="margin-bottom: 12px;">
+                <h1 class="massive-text" style="font-weight:900; color:#8E001C; letter-spacing:1px;">PyRoma</h1>
+                <h2 class="light-text" style="font-size:2.2em; color:#FFB300;">
+                    <span style="color:#8E001C;">S</span><span>ono</span>
+                    <span style="color:#8E001C;">P</span><span>ythonisti</span>
+                    <span style="color:#8E001C;">Q</span><span>uesti</span>
+                    <span style="color:#8E001C;">R</span><span>omani</span>
+                </h2>
             </div>
         </div>
     </div>
 
-    <!-- EVENT DATA: aggiorna SOLO questi data-* per il prossimo evento -->
-    <div style="display:none" id="event-data">
-      <div data-title="PyData Roma Capitale + PyRoma Meetup @ The Social Hub"></div>
-      <div data-date="Martedì, 18 Novembre 2025, 18:00 – 21:30"></div>
-      <div data-location="The Social Hub Rome, Viale dello Scalo S. Lorenzo, 10, 00185 Roma"></div>
-      <div data-description="Una serata tra data science, software engineering e community. Partecipa per conoscere, imparare, condividere anche tu!"></div>
-      <div data-link="https://www.meetup.com/pydata-roma-capitale/events/311728960/"></div>
-    </div>
-    <div class="ui grid container">
-        <div class="sixteen wide column" style="display:flex; justify-content:center;">
-            <div id="next-event" class="ui fluid card" style="max-width:480px; width:100%; margin:24px auto 32px; border-radius:18px; box-shadow:0 6px 20px #8e001c12; background:#fff;">
-                <div class="content" style="padding:2em 2em 1em 2em;">
-                    <div class="header" id="event-title" style="color:#8E001C; font-size:1.6em; font-weight:700;"></div>
-                    <div class="meta" style="font-size:1em; color:#222; margin:0.4em 0 0.2em 0;">
-                        <span id="event-date" style="font-weight:500;"></span><br>
-                        <span id="event-location" style="color:#666;"></span>
-                    </div>
-                    <div class="description" id="event-description" style="margin:1em 0; color:#444; font-size:1.08em;"></div>
-                </div>
-                <div class="extra content" style="padding:1em 2em 1em 2em;">
-                    <a href="#" id="event-link" target="_blank" class="ui yellow big button" style="width:100%; font-weight:bold; letter-spacing:0.5px;">Vedi evento su Meetup</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- SECTION: preview eventi generati dinamicamente -->
+    <div class="ui grid container" id="events-grid" style="margin-bottom: 2em;"></div>
+    <div id="event-data-attach"></div>
     <script>
-    // JS per popolare la preview evento -- basta cambiare sopra i data-*
-    (function(){
-      var root = document.getElementById('event-data');
-      function val(name){
-        var d = root.querySelector('div[data-'+name+']');
-        return d ? d.getAttribute('data-'+name) : '';
-      }
-      document.getElementById('event-title').textContent   = val('title');
-      document.getElementById('event-date').textContent    = val('date');
-      document.getElementById('event-location').textContent= val('location');
-      document.getElementById('event-description').textContent = val('description');
-      document.getElementById('event-link').href           = val('link');
-    })();
+    // Utility: crea template card evento
+    function createEventCard(data) {
+      return `<div class='sixteen wide column' style="display:flex; justify-content:center;">
+        <div class="ui fluid card" style="max-width:480px; width:100%; margin:24px auto 32px; border-radius:18px; box-shadow:0 6px 20px #8e001c12; background:#fff;">
+          <div class="content" style="padding:2em 2em 1em 2em;">
+            <div class="header" style="color:#8E001C; font-size:1.6em; font-weight:700;">${data.title || ''}</div>
+            <div class="meta" style="font-size:1em; color:#222; margin:0.4em 0 0.2em 0;">
+              <span style="font-weight:500;">${data.date || ''}</span><br>
+              <span style="color:#666;">${data.location || ''}</span>
+            </div>
+            <div class="description" style="margin:1em 0; color:#444; font-size:1.08em;">${data.description || ''}</div>
+          </div>
+          <div class="extra content" style="padding:1em 2em 1em 2em;">
+            <a href="${data.link || '#'}" target="_blank" class="ui yellow big button" style="width:100%; font-weight:bold; letter-spacing:0.5px;">Vedi evento su Meetup</a>
+          </div>
+        </div>
+      </div>`;
+    }
+    fetch('events.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('event-data-attach').innerHTML = html;
+        const eventDivs = document.querySelectorAll('.event-data');
+        const grid = document.getElementById('events-grid');
+        grid.innerHTML = '';
+        eventDivs.forEach(div => {
+          const data = {
+            title: div.getAttribute('data-title') || '',
+            date: div.getAttribute('data-date') || '',
+            location: div.getAttribute('data-location') || '',
+            description: div.getAttribute('data-description') || '',
+            link: div.getAttribute('data-link') || '#',
+          };
+          grid.innerHTML += createEventCard(data);
+        });
+      });
     </script>
     <div class="ui divider"></div>
     <div class="ui container">
