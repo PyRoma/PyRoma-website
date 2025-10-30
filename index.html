@@ -5,10 +5,27 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PyRoma</title>
+    <title>PyRoma • Python community a Roma</title>
+    <meta name="description" content="PyRoma: la community di sviluppatori Python a Roma. Meetup, eventi, networking e formazione. Unisciti a noi!">
+    <meta name="keywords" content="Python, Roma, Meetup, Community, PyRoma, Eventi, Pythonista, Associazione, Python Italia">
+    <meta name="author" content="PyRoma">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pyroma.it/">
+    <meta property="og:title" content="PyRoma • Python community a Roma">
+    <meta property="og:description" content="Scopri la community di sviluppatori Python di Roma! Partecipa a meetup, eventi e workshop con PyRoma.">
+    <meta property="og:image" content="https://pyroma.it/img/logo.svg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pyroma.it/">
+    <meta property="twitter:title" content="PyRoma • Python community a Roma">
+    <meta property="twitter:description" content="Unisciti alla community Python di Roma! Eventi, meetup, networking. Scopri di più su PyRoma.">
+    <meta property="twitter:image" content="https://pyroma.it/img/logo.svg">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon (opzionale) -->
+    <!-- <link rel="icon" href="/img/logo.svg" type="image/svg+xml"> -->
 </head>
 
 <body>
@@ -51,11 +68,13 @@
     <div id="background">
         <div class="ui grid container">
             <div class="six wide vertical computer tablet only column">
-                <img src="img/logo.svg" alt="Logo" class="logo">
+                <img src="img/logo.svg" alt="Logo PyRoma" class="logo" style="filter: drop-shadow(2px 4px 8px #8E001C50);">
             </div>
             <div class="ten wide middle computer tablet only column">
-                <h1 class="massive-text">PyRoma</h1>
-                <h1 class="light-text">Sono Pythonisti Questi Romani</h1>
+                <h1 class="massive-text" style="font-weight:900; color:#8E001C; letter-spacing:1px;">PyRoma</h1>
+                <h2 class="light-text" style="font-size:2.2em; color:#FFB300;">La community Python a Roma</h2>
+                <p class="light-text" style="font-size:1.18em; margin-top:20px;">Incontri dal vivo, formazione, networking per chi ama Python. Unisciti a noi!</p>
+                <a href="#socials" class="ui orange huge button" style="margin-top:20px;">Seguici &rarr;</a>
             </div>
             <div class="sixteen wide mobile only top-mar center aligned column">
                 <img src="img/logo.svg" alt="Logo" class="logo">
@@ -67,38 +86,46 @@
         </div>
     </div>
 
-    <div class="big">
-        <div class="ui grid container">
-            <div class="ten wide computer sixteen wide mobile column">
-                <div class="ui center aligned segment content">
-                    <h1>Save the date.<br/>
-                            Il prossimo meetup sar&agrave:
-                        </h1>
-                    <h3 class="light-text justified">
-                            L'evento è organizzato da Python Italia.
-                            Python Italia è un'associazione no-profit che ha come scopo la diffusione di
-                            Python sul territorio italiano.
-                            Fondata nel 2007 ha organizzato ogni anno PyCon Italia,
-                            la più grande conferenza italiana su Python che ad oggi conta più di 600 partecipanti.
-                            <br/>
-                        </h3>
-                    <a href="https://www.eventbrite.it/e/biglietti-meetup-aperitech-di-pyroma-53657526105" id="tickets" target="_blank">
-                            Prenota il tuo biglietto qui!
-                        </a>
-                </div>
-            </div>
-            <div class="six wide computer sixteen wide mobile column">
-                <div class="ui meetup segment">
-                    <div class="date-piece up day">Lunedì</div>
-                    <div class="date-piece center month">21 Gennaio 2019</div>
-                    <div class="date-piece center month">19:00 – 21:00 CET</div>
-                    <div class="date-piece down venue">
-                        <strong>LUISS ENLABS Via Marsala 29/H terzo piano 00185 Roma</strong>
+    <!-- EVENT DATA: aggiorna SOLO questi data-* per il prossimo evento -->
+    <div style="display:none" id="event-data">
+      <div data-title="PyData Roma Capitale + PyRoma Meetup @ The Social Hub"></div>
+      <div data-date="Martedì, 18 Novembre 2025, 18:00 – 21:30"></div>
+      <div data-location="The Social Hub Rome, Viale dello Scalo S. Lorenzo, 10, 00185 Roma"></div>
+      <div data-description="Una serata tra data science, software engineering e community. Partecipa per conoscere, imparare, condividere anche tu!"></div>
+      <div data-link="https://www.meetup.com/pydata-roma-capitale/events/311728960/"></div>
+    </div>
+    <div class="ui grid container">
+        <div class="sixteen wide column" style="display:flex; justify-content:center;">
+            <div id="next-event" class="ui fluid card" style="max-width:480px; width:100%; margin:24px auto 32px; border-radius:18px; box-shadow:0 6px 20px #8e001c12; background:#fff;">
+                <div class="content" style="padding:2em 2em 1em 2em;">
+                    <div class="header" id="event-title" style="color:#8E001C; font-size:1.6em; font-weight:700;"></div>
+                    <div class="meta" style="font-size:1em; color:#222; margin:0.4em 0 0.2em 0;">
+                        <span id="event-date" style="font-weight:500;"></span><br>
+                        <span id="event-location" style="color:#666;"></span>
                     </div>
+                    <div class="description" id="event-description" style="margin:1em 0; color:#444; font-size:1.08em;"></div>
+                </div>
+                <div class="extra content" style="padding:1em 2em 1em 2em;">
+                    <a href="#" id="event-link" target="_blank" class="ui yellow big button" style="width:100%; font-weight:bold; letter-spacing:0.5px;">Vedi evento su Meetup</a>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    // JS per popolare la preview evento -- basta cambiare sopra i data-*
+    (function(){
+      var root = document.getElementById('event-data');
+      function val(name){
+        var d = root.querySelector('div[data-'+name+']');
+        return d ? d.getAttribute('data-'+name) : '';
+      }
+      document.getElementById('event-title').textContent   = val('title');
+      document.getElementById('event-date').textContent    = val('date');
+      document.getElementById('event-location').textContent= val('location');
+      document.getElementById('event-description').textContent = val('description');
+      document.getElementById('event-link').href           = val('link');
+    })();
+    </script>
     <div class="ui divider"></div>
     <div class="ui container">
         <div class="ui center aligned text container">
@@ -107,7 +134,7 @@
         </div>
     </div>
     <br>
-    <div class="ui stackable four column grid center aligned bottom-padded">
+    <div id="socials" class="ui stackable four column grid center aligned bottom-padded">
         <div class="column">
             <div class="ui link card centered" onclick="window.open('http://twitter.com/pyroma', '_blank')">
                 <div class="image">
@@ -138,21 +165,7 @@
                 </div>
             </div>
         </div>
-        <div class="column">
-            <div class="ui link card centered" onclick="window.open('https://lists.python.it/mailman/listinfo/pyroma', '_blank')">
-                <div class="image">
-                    <img src="img/mail.png">
-                </div>
-                <div class="content">
-                    <div class="header">
-                        <a href="https://lists.python.it/mailman/listinfo/pyroma">Mailing List</a>
-                    </div>
-                    <div class="description">
-                        Join Mailing List
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="column">
             <div class="ui link card centered" onclick="window.open('http://github.com/pyroma', '_blank')">
                 <div class="image">
@@ -169,8 +182,8 @@
             </div>
         </div>
     </div>
-    <div class="footer ui inverted center aligned segment">
-        &copy; PyRoma <script>document.write(new Date().getFullYear());</script>
+    <div class="footer ui inverted center aligned segment" style="letter-spacing:1px; background:#8E001C; color:white; font-size:1.1em;">
+        &copy; PyRoma <script>document.write(new Date().getFullYear());</script> • Built with ❤️ by the community
     </div>
 </body>
 
